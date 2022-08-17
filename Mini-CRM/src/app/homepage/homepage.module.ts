@@ -1,4 +1,4 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { NgModule} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { HomepageRoutingModule } from './homepage-routing.module';
@@ -7,10 +7,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon'
 import { HttpClientModule} from '@angular/common/http';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
+import { ContactComponent } from './contact/contact.component';
+import { AboutComponent } from './about/about.component';
 @NgModule({
   declarations: [
     HomepageComponent,
-    NavigationBarComponent
+    NavigationBarComponent,
+    ContactComponent,
+    AboutComponent
   ],
   imports: [
     CommonModule,
@@ -20,6 +24,6 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
     HttpClientModule
   ],
   exports:[NavigationBarComponent],
-  schemas:[NO_ERRORS_SCHEMA]
+  schemas:[]
 })
 export class HomepageModule { }
