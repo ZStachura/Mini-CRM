@@ -8,25 +8,27 @@
                 <label>Email</label>
                 <input
                   type="text"
-                  formControlName="email"
+                  #logemail
+                  formControlName="log_email"
                   class="form-control"
-                  [ngClass]="{ 'is-invalid': log && f['email'].errors }"
+                  [ngClass]="{ 'is-invalid': log && f['log_email'].errors }"
                 />
-                <div *ngIf="log && f['email'].errors" class="invalid-feedback">
-                  <div *ngIf="f['email'].errors['required']">Email is required</div>
-                  <div *ngIf="f['email'].errors['email']">Email is invalid</div>
+                <div *ngIf="log && f['log_email'].errors" class="invalid-feedback">
+                  <div *ngIf="f['log_email'].errors['required']">Email is required</div>
+                  <div *ngIf="f['log_email'].errors['email']">Email is invalid</div>
                 </div>
               </div>
               <div class="form-group">
                 <label>Password</label>
                 <input
                   type="password"
-                  formControlName="password"
+                  #logpassword
+                  formControlName="log_password"
                   class="form-control"
-                  [ngClass]="{ 'is-invalid': log && f['password'].errors }"
+                  [ngClass]="{ 'is-invalid': log && f['log_password'].errors }"
                 />
-                <div *ngIf="log && f['password'].errors" class="invalid-feedback">
-                  <div *ngIf="f['password'].errors['required']">Password is required</div>
+                <div *ngIf="log && f['log_password'].errors" class="invalid-feedback">
+                  <div *ngIf="f['log_password'].errors['required']">Password is required</div>
                 </div>
               </div>
               <div class="form-group">
@@ -50,6 +52,7 @@
                 <label>First Name</label>
                 <input
                   type="text"
+                  #regfirstname
                   formControlName="firstname"
                   class="form-control"
                   [ngClass]="{ 'is-invalid': submitted && f['firstname'].errors }"
@@ -63,6 +66,7 @@
                 <label>Last Name</label>
                 <input
                   type="text"
+                  #reglastname
                   formControlName="lastname"
                   class="form-control"
                   [ngClass]="{ 'is-invalid': submitted && f['lastname'].errors }"
@@ -76,6 +80,7 @@
                 <label>Username</label>
                 <input
                   type="text"
+                  #regusername
                   formControlName="username"
                   class="form-control"
                   [ngClass]="{ 'is-invalid': submitted && f['username'].errors }"
@@ -88,6 +93,7 @@
                 <label>Email</label>
                 <input
                   type="text"
+                  #regemail
                   formControlName="email"
                   class="form-control"
                   [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
@@ -101,6 +107,7 @@
                 <label>Password</label>
                 <input
                   type="password"
+                  #regpassword
                   formControlName="password"
                   class="form-control"
                   [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
