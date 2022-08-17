@@ -36,6 +36,7 @@ export class AuthenticationComponent implements OnInit {
   log=false;
 
   ngOnInit(): void {
+    this.storage.set("token",{token:false})
     //Register
     this.form = this.formBuilder.group(
       {
@@ -98,7 +99,7 @@ export class AuthenticationComponent implements OnInit {
     this.log=true;
     if(this.logform.invalid)
     {
-      this.storage.set("token",false)
+      this.storage.set("token",{token:false})
       return;
     }
     var user:User=(this.storage.get(this.logform.controls['log_email'].value))

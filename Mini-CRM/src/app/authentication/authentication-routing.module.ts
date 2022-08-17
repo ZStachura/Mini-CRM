@@ -6,7 +6,7 @@ import { CanActivateGuard } from './guard/CanActivateGuard';
 const routes: Routes = [{ path: '', component: AuthenticationComponent },
  { path: 'dashboard', 
  loadChildren: () => import('../dashboard/dashboard.module').then(m => m.DashboardModule),
- //canActivate:[CanActivateGuard]
+ canActivate:[CanActivateGuard]
 }];
 
 @NgModule({
