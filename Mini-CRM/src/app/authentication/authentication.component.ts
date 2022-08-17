@@ -3,6 +3,7 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from
 import Validation from './utils/validation';
 import { AuthenticationService } from './utils/authentication.service';
 import { User } from './utils/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-authentication',
@@ -11,7 +12,7 @@ import { User } from './utils/user';
 })
 export class AuthenticationComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder,private storage:AuthenticationService) { }
+  constructor(private formBuilder: FormBuilder,private storage:AuthenticationService,private router:Router) { }
 
   signIn:boolean=false;
   signUp:boolean=true;
@@ -69,6 +70,10 @@ export class AuthenticationComponent implements OnInit {
     return this.form.controls;
   }
 
+  get g(): { [key: string]: AbstractControl } {
+    return this.logform.controls;
+  }
+
 
   //registration
   onSubmit(): void {
@@ -93,12 +98,14 @@ export class AuthenticationComponent implements OnInit {
     this.log=true;
     if(this.logform.invalid)
     {
+      this.storage.set("token",false)
       return;
     }
     var user:User=(this.storage.get(this.logform.controls['log_email'].value))
     if(this.logform.controls["log_password"].value==user.password)
     {
       alert("zalogowano")
+      this.storage.set("token",{token:true})
     }
     console.log(JSON.stringify(this.logform.value,null,2));
    }

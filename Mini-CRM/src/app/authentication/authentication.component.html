@@ -11,11 +11,11 @@
                   #logemail
                   formControlName="log_email"
                   class="form-control"
-                  [ngClass]="{ 'is-invalid': log && f['log_email'].errors }"
+                  [ngClass]="{ 'is-invalid': log && g['log_email'].errors }"
                 />
-                <div *ngIf="log && f['log_email'].errors" class="invalid-feedback">
-                  <div *ngIf="f['log_email'].errors['required']">Email is required</div>
-                  <div *ngIf="f['log_email'].errors['email']">Email is invalid</div>
+                <div *ngIf="log && g['log_email'].errors" class="invalid-feedback">
+                  <div *ngIf="g['log_email'].errors['required']">Email is required</div>
+                  <div *ngIf="g['log_email'].errors['email']">Email is invalid</div>
                 </div>
               </div>
               <div class="form-group">
@@ -25,14 +25,14 @@
                   #logpassword
                   formControlName="log_password"
                   class="form-control"
-                  [ngClass]="{ 'is-invalid': log && f['log_password'].errors }"
+                  [ngClass]="{ 'is-invalid': log && g['log_password'].errors }"
                 />
-                <div *ngIf="log && f['log_password'].errors" class="invalid-feedback">
-                  <div *ngIf="f['log_password'].errors['required']">Password is required</div>
+                <div *ngIf="log && g['log_password'].errors" class="invalid-feedback">
+                  <div *ngIf="g['log_password'].errors['required']">Password is required</div>
                 </div>
               </div>
               <div class="form-group">
-                <button type="submit" class="btn btn-warning">Log In</button>
+                <button type="submit" class="btn btn-warning" routerLink="dashboard">Log In</button>
                 <button
                   type="button"
                   (click)="logreset()"
