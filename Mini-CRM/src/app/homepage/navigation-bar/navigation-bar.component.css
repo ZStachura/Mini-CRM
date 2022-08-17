@@ -1,0 +1,18 @@
+.navigation-bar{
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    background: #ffffff;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+  }
+  
+    .login-btn { 
+        margin-left: 55vw;
+        margin-top: 2.5vh;
+    }
+    .homepage-btn, .about-btn, .contact-btn{
+        margin-left: 5vw;
+        margin-top: 5vh;
+        color: black;
+    }

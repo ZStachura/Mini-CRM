@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
-import { HomeComponent } from './home/home.component';
 import { HomepageComponent } from './homepage.component';
 
 const routes: Routes = [
@@ -11,17 +10,14 @@ const routes: Routes = [
     component: HomepageComponent,
    },
   {
-    path:'home',
-    component:HomeComponent
-  },
-  {
     path:'about',
-    component:AboutComponent
+    component:AboutComponent,
   },
   {
     path:'contact',
-    component:ContactComponent
-  }
+    component:ContactComponent,
+  },
+  { path: 'authentication', loadChildren: () => import('../authentication/authentication.module').then(m => m.AuthenticationModule) }
 ];
 
 @NgModule({

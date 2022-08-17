@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, NgModule, OnInit } from '@angular/core';
+import { HomepageModule } from '../homepage.module';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -13,3 +13,4 @@ export class ContactComponent implements OnInit {
   }
 
 }
+

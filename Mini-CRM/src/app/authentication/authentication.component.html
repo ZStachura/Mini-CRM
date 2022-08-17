@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="form">
+        <div class="sign-in-form" *ngIf="signUp"></div>
+        <div class="sign-up-form" *ngIf="signIn"></div>
+        <div class="overlay-right" *ngIf="signIn">
+                <h1>Welcome Back!</h1>
+				<p>To keep connected with us please login with your personal details</p>
+				<button id="signIn" (click)="changeOverlay()">Sign In</button>
+        </div>
+        <div class="overlay-left" *ngIf="signUp">
+                <h1>Hi There!</h1>
+				<p>Enter your personal details to open an account with us</p>
+				<button id="signUp" (click)="changeOverlay()">Sign Up</button>
+        </div>
+</div>

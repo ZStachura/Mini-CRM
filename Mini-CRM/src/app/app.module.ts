@@ -6,7 +6,7 @@ import { RouterModule} from '@angular/router';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { SvgServiceService } from './svgService.service';
+import { SvgServiceService } from './icons/svgService.service';
 
 function initializeApp(svgService: SvgServiceService):()=>Promise<void>
 {
