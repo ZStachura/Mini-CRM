@@ -17,7 +17,7 @@ const routes: Routes = [
     path:'contact',
     component:ContactComponent,
   },
-  { path: 'authentication', loadChildren: () => import('../authentication/authentication.module').then(m => m.AuthenticationModule) }
+  { path: 'auth', loadChildren: () => import('../authentication/authentication.module').then(m => m.AuthenticationModule) }
 ];
 
 @NgModule({

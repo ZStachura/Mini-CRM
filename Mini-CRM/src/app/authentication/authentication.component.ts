@@ -105,8 +105,9 @@ export class AuthenticationComponent implements OnInit {
     var user:User=(this.storage.get(this.logform.controls['log_email'].value))
     if(this.logform.controls["log_password"].value==user.password)
     {
-      alert("zalogowano")
+      this.storage.set('current',this.logform.controls['log_email'].value)
       this.storage.set("token",{token:true})
+      this.router.navigate(['/dashboard'])
     }
     console.log(JSON.stringify(this.logform.value,null,2));
    }

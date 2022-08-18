@@ -1,0 +1,17 @@
+.container{
+    width:100vw;
+    height:100vh;
+    display: flex;
+    flex-direction: row;
+}
+.footer{
+    width: 100vw;
+    height: 3vh;
+    display: flex;
+    justify-content: center;
+    background: #FFCA28;
+    color: black;
+    position: absolute;
+    bottom: 0;
+    z-index: -100;
+}

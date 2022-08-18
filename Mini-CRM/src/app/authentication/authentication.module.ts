@@ -15,7 +15,7 @@ import { AuthenticationComponent } from './authentication.component';
   imports: [
     CommonModule,
     AuthenticationRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers:[AuthenticationService]
 })
