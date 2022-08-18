@@ -24,7 +24,7 @@ function initializeApp(svgService: SvgServiceService):()=>Promise<void>
     AppRoutingModule,
     BrowserAnimationsModule,
     RouterModule,
-    HttpClientModule,
+    HttpClientModule
   ],
   providers: [{provide:APP_INITIALIZER,useFactory:initializeApp,deps:[SvgServiceService],multi:true}],
   bootstrap: [AppComponent],

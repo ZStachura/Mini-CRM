@@ -12,8 +12,6 @@ import { EditUserComponent } from './features/edit-user/edit-user.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 
-import { PasswordStrengthMeterModule } from 'angular-password-strength-meter';
-
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -27,8 +25,7 @@ import { PasswordStrengthMeterModule } from 'angular-password-strength-meter';
     DashboardRoutingModule,
     MatButtonModule,
     MatDialogModule,
-    ReactiveFormsModule,
-    PasswordStrengthMeterModule.forRoot()
+    ReactiveFormsModule
   ],
   exports:[NavBarComponent]
 })
