@@ -6,8 +6,7 @@ import { AuthenticationService } from './utils/authentication.service';
 
 import { AuthenticationRoutingModule } from './authentication-routing.module';
 import { AuthenticationComponent } from './authentication.component';
-
-
+import { StrenghtmeterModule } from '../features/passwordStrength/strenghtmeter/strenghtmeter.module';
 @NgModule({
   declarations: [
     AuthenticationComponent
@@ -16,6 +15,7 @@ import { AuthenticationComponent } from './authentication.component';
     CommonModule,
     AuthenticationRoutingModule,
     ReactiveFormsModule,
+    StrenghtmeterModule
   ],
   providers:[AuthenticationService]
 })
