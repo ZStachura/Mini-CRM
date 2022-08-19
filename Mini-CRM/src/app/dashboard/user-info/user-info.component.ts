@@ -3,6 +3,7 @@ import { AuthenticationService } from 'src/app/authentication/utils/authenticati
 import { User } from 'src/app/authentication/utils/user';
 import { MatDialog,MatDialogRef } from '@angular/material/dialog';
 import { EditUserComponent } from '../features/edit-user/edit-user.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-info',
@@ -11,7 +12,7 @@ import { EditUserComponent } from '../features/edit-user/edit-user.component';
 })
 export class UserInfoComponent implements OnInit {
 
-  constructor(private storage:AuthenticationService,public dialog:MatDialog) { }
+  constructor(private storage:AuthenticationService,public dialog:MatDialog,private router:Router ) { }
 
   firstname:string=''
   lastname:string=''
@@ -31,7 +32,10 @@ export class UserInfoComponent implements OnInit {
   }
 
   openModal(){
-    this.dialog.open(EditUserComponent,{data:{current:this.currentuser,id:this.username}}).afterClosed().subscribe(()=>window.location.reload())
+    this.router.navigate(['/dashboard/user',{
+      user:this.username
+    }]);
+    this.dialog.open(EditUserComponent,{data:{current:this.currentuser,id:this.username}}).afterClosed().subscribe(()=>{this.router.navigate(['/dashboard/user']);window.location.reload();})
   }
 
 }

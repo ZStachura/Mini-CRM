@@ -1,10 +1,11 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject ,OnDestroy} from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { User } from 'src/app/authentication/utils/user';
 import { AuthenticationService } from 'src/app/authentication/utils/authentication.service';
 import Validation from 'src/app/authentication/utils/validation';
 import { MatDialogRef } from '@angular/material/dialog';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-user',
@@ -13,7 +14,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class EditUserComponent implements OnInit {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data:{current:string,id:string}, private storage:AuthenticationService,private formBuilder: FormBuilder, public dialogRef:MatDialogRef<EditUserComponent>) {}
+  constructor(@Inject(MAT_DIALOG_DATA) public data:{current:string,id:string}, private storage:AuthenticationService,private formBuilder: FormBuilder, public dialogRef:MatDialogRef<EditUserComponent>,private router:Router) {}
 
   //Register
   form: FormGroup = new FormGroup({
@@ -64,6 +65,7 @@ export class EditUserComponent implements OnInit {
       }
       else{
         this.storage.set(this.form.controls['email'].value,{firstname:this.form.controls['firstname'].value,lastname:this.form.controls['lastname'].value,username:this.form.controls['username'].value,email:this.form.controls['email'].value,password:this.form.controls['password'].value})
+        this.router.navigate(['/dashboard/user']);
         this.dialogRef.close();
       }
       console.log(JSON.stringify(this.form.value, null, 2));
