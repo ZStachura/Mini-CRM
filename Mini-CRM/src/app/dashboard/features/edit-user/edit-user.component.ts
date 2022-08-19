@@ -13,7 +13,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class EditUserComponent implements OnInit {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data:{current:string}, private storage:AuthenticationService,private formBuilder: FormBuilder, public dialogRef:MatDialogRef<EditUserComponent>) {}
+  constructor(@Inject(MAT_DIALOG_DATA) public data:{current:string,id:string}, private storage:AuthenticationService,private formBuilder: FormBuilder, public dialogRef:MatDialogRef<EditUserComponent>) {}
 
   //Register
   form: FormGroup = new FormGroup({

@@ -8,9 +8,12 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { UserInfoComponent } from './user-info/user-info.component';
 import { ChartComponent } from './chart/chart.component';
 import { EditUserComponent } from './features/edit-user/edit-user.component';
+import { ClientsComponent } from './clients/clients.component';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatTableModule} from '@angular/material/table';
+import {MatListModule} from '@angular/material/list';
 
 import { StrenghtmeterModule } from '../features/passwordStrength/strenghtmeter/strenghtmeter.module';
 
@@ -20,7 +23,8 @@ import { StrenghtmeterModule } from '../features/passwordStrength/strenghtmeter/
     NavBarComponent,
     UserInfoComponent,
     ChartComponent,
-    EditUserComponent
+    EditUserComponent,
+    ClientsComponent
   ],
   imports: [
     CommonModule,
@@ -28,7 +32,9 @@ import { StrenghtmeterModule } from '../features/passwordStrength/strenghtmeter/
     MatButtonModule,
     MatDialogModule,
     ReactiveFormsModule,
-    StrenghtmeterModule
+    StrenghtmeterModule,
+    MatTableModule,
+    MatListModule
   ],
   exports:[NavBarComponent]
 })

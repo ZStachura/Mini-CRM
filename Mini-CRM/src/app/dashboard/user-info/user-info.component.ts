@@ -31,7 +31,7 @@ export class UserInfoComponent implements OnInit {
   }
 
   openModal(){
-    this.dialog.open(EditUserComponent,{data:{current:this.currentuser}}).afterClosed().subscribe(()=>window.location.reload())
+    this.dialog.open(EditUserComponent,{data:{current:this.currentuser,id:this.username}}).afterClosed().subscribe(()=>window.location.reload())
   }
 
 }

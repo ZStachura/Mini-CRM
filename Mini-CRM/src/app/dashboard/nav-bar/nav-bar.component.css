@@ -14,11 +14,11 @@
   
     .sign-out-btn { 
         margin-left: 2vw;
-        margin-top: 50vh;
+        margin-top: 40vh;
     }
-    .dashboard-btn, .user-btn{
+    .dashboard-btn, .user-btn, .client-btn{
         margin-left: 1vw;
-        margin-top: 5vh;
+        margin-top: 3vh;
         color: black;
     }
     h3
