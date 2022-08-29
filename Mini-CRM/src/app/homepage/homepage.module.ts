@@ -24,6 +24,7 @@ import { AboutComponent } from './about/about.component';
     HttpClientModule
   ],
   exports:[NavigationBarComponent],
-  schemas:[]
+  schemas:[],
+  providers:[HttpClientModule]
 })
 export class HomepageModule { }
